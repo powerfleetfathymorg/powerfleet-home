@@ -49,7 +49,7 @@ jobs:
           description: ${{ github.event.client_payload.data.description }}
       - id: sync
         name: Syncing Plasmic project...
-        # if: ${{ github.event.client_payload.data.scheme == 'codegen' && steps.init.outputs.synced != 'true' }}
+        if: ${{ github.event.client_payload.data.scheme == 'codegen' && steps.init.outputs.synced != 'true' }}
         uses: plasmicapp/plasmic-action@master
         with:
           run: sync
